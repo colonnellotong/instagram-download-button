@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram 下载器",
+  "version": "0.1.0",
+  "description": "在 Instagram 帖子中添加下载和打开媒体按钮。基于 ZhiYu 的 MIT 项目修改。",
+  "permissions": [
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
